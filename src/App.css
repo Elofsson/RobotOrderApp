@@ -1,3 +1,13 @@
+html {background-color: #282c34}
+
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  border: 5px solid #FFFF00;
+}
+
 .App {
   text-align: center;
 }
@@ -14,14 +24,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: gainsboro;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+/* TODO: Move to another css file. */
+.App-products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
 }
 
 .App-link {
