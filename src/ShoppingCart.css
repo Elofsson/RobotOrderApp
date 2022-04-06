@@ -1,0 +1,25 @@
+.Shopping-cart {
+  position: sticky;
+  float: right;
+  padding: 1%;
+  margin: 1%;
+  top: 20%; 
+}
+
+.Shopping-cart-button {
+  background-color: #379de6;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
+.Shopping-cart-button:hover {
+  background-color: #3780b5;
+  color: white;
+}

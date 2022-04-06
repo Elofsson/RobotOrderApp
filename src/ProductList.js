@@ -6,7 +6,7 @@ class ProductList extends React.Component {
       return (
       <div className="App-products"> 
         {this.props.products.map(product => (
-          <Product id={product} name={product.name} price={product.price} inStock={product.inStock}></Product>
+          <Product id={product.id} name={product.name} price={product.price} inStock={product.inStock} onClick={this.props.onClick}></Product>
         ))}
       </div>
       );

@@ -37,6 +37,11 @@
   height: 100%;
 }
 
+.Product-button:hover {
+  background-color: #3780b5;
+  color: white;
+}
+
 .Product-button {
   background-color:#379de6; 
   border: none;

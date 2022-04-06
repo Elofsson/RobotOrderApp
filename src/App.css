@@ -5,7 +5,6 @@ html {background-color: #282c34}
   margin: auto;
   width: 60%;
   padding: 10px;
-  border: 5px solid #FFFF00;
 }
 
 .App {
@@ -25,9 +24,6 @@ html {background-color: #282c34}
 
 .App-header {
   background-color: gainsboro;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 /* TODO: Move to another css file. */
@@ -36,6 +32,10 @@ html {background-color: #282c34}
   flex-wrap: wrap;
   margin-left: -8px;
   margin-right: -8px;
+}
+
+.App-header-item {
+  display: inline;
 }
 
 .App-link {

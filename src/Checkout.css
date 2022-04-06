@@ -1,0 +1,42 @@
+.Checkout {
+  background-color: white;
+  margin: 0;
+  width: 50%;
+  padding: 10px;
+  border-radius: 3px;
+  padding: 1.5%;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}
+
+.Checkout-button {
+  background-color:#379de6; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  height: 20%;
+  text-decoration: none;
+  width: 80%;
+  font-size: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  right: 10%;
+  bottom:  0;
+}
+
+.Checkout-card {
+  float: left;
+  margin-left: 5%;
+  display: block;
+  margin-right: auto;
+  width: 20%;
+}
