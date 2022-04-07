@@ -2,10 +2,12 @@ import './Checkout.css';
 import {React, useState} from "react";
 import { TextField, Grid } from '@mui/material';
 import { useForm } from "react-hook-form";
+import { Navigate } from "react-router-dom";
 import creditcard from "./res/credit-card.png";
 
 const Checkout = ({selectedProducts}) => {
 
+  const [redirect, setRedirect] = useState(false);
   const { register, handleSubmit, formState: {errors}} = useForm();
 
   //Error message to be displayed.
@@ -17,31 +19,41 @@ const Checkout = ({selectedProducts}) => {
     be different dependibg on API aswell. Currently all data is sent,
     however in reality that may not be neccessary.
   */
- const onSubmit = (event) => {
+  const onSubmit = (event) => {
 
-  //Construct user object with data from form.
-  const userData = {
-    firstName: removeSpecialChars(event.firstName),
-    lastName: removeSpecialChars(event.lastName),
-    address: removeSpecialChars(event.address),
-    postalCode: removeSpecialChars(event.postalCode),
-    city: removeSpecialChars(event.city),
-    county: removeSpecialChars(event.county),
-    country: removeSpecialChars(event.country),
-    cardNumber: removeSpecialChars(event.cardNumber),
-    validThru: removeSpecialChars(event.validThru),
-    cvc: removeSpecialChars(event.validThru),
+    //Construct user object with data from form.
+    const userData = {
+      firstName: removeSpecialChars(event.firstName),
+      lastName: removeSpecialChars(event.lastName),
+      address: removeSpecialChars(event.address),
+      postalCode: removeSpecialChars(event.postalCode),
+      city: removeSpecialChars(event.city),
+      county: removeSpecialChars(event.county),
+      country: removeSpecialChars(event.country),
+      cardNumber: removeSpecialChars(event.cardNumber),
+      validThru: removeSpecialChars(event.validThru),
+      cvc: removeSpecialChars(event.validThru),
+    }
+
+    //Append the products user have selected.
+    const dataToApi = {
+      products: selectedProducts,
+      user: userData
+    };
+
+    //Perform a API call.
+    sendDataToApi(dataToApi);
+
+    //Set redirection.
+    setRedirect(true);
   }
 
-  //Append the products user have selected.
-  const dataToApi = {
-    products: selectedProducts,
-    user: userData
-  };
-
-  //Perform a API call.
-  sendDataToApi(dataToApi);
-}
+  //Redirect if a valid submition was done.
+  if(redirect) {
+    return (
+      <Navigate to="/confirmation"></Navigate>
+    );
+  }
   
   return (
     <form autoComplete="off" className="Checkout" onSubmit={handleSubmit(onSubmit)}>

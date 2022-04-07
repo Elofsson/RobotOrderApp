@@ -1,0 +1,35 @@
+.Confirmation {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.Confirmation-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+}
+
+.Confirmation-button {
+  background-color:#379de6; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  width: 50%;
+  font-size: 16px;
+  border-radius: 3px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.Confirmation-button:hover {
+  background-color: #3780b5;
+  color: white;
+}

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import Products from './Products';
+import Confirmation from './Confirmation';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Checkout from './Checkout';
@@ -15,6 +16,7 @@ render(
       <Route path="/" element={<App/>}></Route>
       <Route path="products" element={<Products/>}></Route>
       <Route path="checkout" element={<Checkout/>}></Route>
+      <Route path="confirmation" element={<Confirmation/>}></Route>
     </Routes>
   </BrowserRouter>,
   rootElement
