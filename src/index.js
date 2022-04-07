@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import Products from './Products';
+import ShoppingCartPreview from './ShoppingCartPreview';
 import Confirmation from './Confirmation';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -15,6 +16,7 @@ render(
     <Routes>
       <Route path="/" element={<App/>}></Route>
       <Route path="products" element={<Products/>}></Route>
+      <Route path="shoppingcartpreview" element={<ShoppingCartPreview/>}></Route>
       <Route path="checkout" element={<Checkout/>}></Route>
       <Route path="confirmation" element={<Confirmation/>}></Route>
     </Routes>

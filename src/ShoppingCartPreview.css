@@ -1,0 +1,38 @@
+.Shopping-cart-container {
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+.Shopping-cart-preview {
+  background-color: white;
+  border-radius: 5%;
+  width: 50%;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2%;
+}
+
+.Shopping-cart-preview-item-summary {
+  border-bottom: solid black 4px;
+  text-align: start;
+}
+
+.Shopping-cart-preview-button {
+  background-color:#379de6; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  height: 20%;
+  text-decoration: none;
+  width: 50%;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.Shopping-cart-preview-button:hover {
+  background-color: #3780b5;
+  color: white;
+}

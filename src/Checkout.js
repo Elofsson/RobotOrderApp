@@ -1,23 +1,29 @@
 import './Checkout.css';
-import {React, useState} from "react";
+import {React, useState, useEffect} from "react";
 import { TextField, Grid } from '@mui/material';
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 import creditcard from "./res/credit-card.png";
 
-const Checkout = ({selectedProducts}) => {
+const Checkout = () => {
 
+  const [userOrder, setUserOrder] = useState([]);
   const [redirect, setRedirect] = useState(false);
   const { register, handleSubmit, formState: {errors}} = useForm();
 
   //Error message to be displayed.
   const baseErrorMsg = "*This field is required";
 
+  //Fetch order details retreived from ShoppingCartPreview.
+  useEffect(() => {
+    const userOrderTmp = JSON.parse((window.localStorage.getItem('userOrder') || []));
+    //console.log("Order details: " + userOrderTmp.totalCost);
+    setUserOrder(userOrderTmp);
+  }, [setUserOrder]);
   
   /*Submit data to API here, depending on the api the information will
     be formatted differently and what kind of data that is required may
-    be different dependibg on API aswell. Currently all data is sent,
-    however in reality that may not be neccessary.
+    be different dependibg on API.
   */
   const onSubmit = (event) => {
 
@@ -37,12 +43,16 @@ const Checkout = ({selectedProducts}) => {
 
     //Append the products user have selected.
     const dataToApi = {
-      products: selectedProducts,
+      userOrder: userOrder,
       user: userData
     };
 
     //Perform a API call.
     sendDataToApi(dataToApi);
+
+    //Remove items from localStorage after successfully sending data to API
+    window.localStorage.removeItem('userOrder');
+    window.localStorage.removeItem('selectedProducts');
 
     //Set redirection.
     setRedirect(true);

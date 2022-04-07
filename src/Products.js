@@ -15,16 +15,34 @@ const Products = () => {
     "inStock":58
   },
   {
-    "id":"6ebbc150-9b80-44b3-9dce-dd4770fc2704",
-    "name":"Tommy - cleaning robot",
+    "id":"6ebbc150-9b80-44b3-9dce-39d23d3ff3efw",
+    "name":"Kalle - Grass cutting robot",
     "price":2000,
     "inStock":58
   },
   {
-    "id":"6ebbc150-9b80-44b3-9dce-dd4770fc2704",
-    "name":"Tommy - cleaning robot",
-    "price":2000,
-    "inStock":58
+    "id":"6ebbc150-9b80-44b3-9dce-dd4770fc3333",
+    "name":"Mimmi - Pike Fishing robot",
+    "price":5000,
+    "inStock":23
+  },
+  {
+    "id":"6ebbc150-9b80-44b3-9dce-dd4770fc3333",
+    "name":"Mimmi - Pike Fishing robot",
+    "price":5000,
+    "inStock":23
+  },
+  {
+    "id":"6ebbc150-9b80-44b3-9dce-dd4770fc3333",
+    "name":"Mimmi - Pike Fishing robot",
+    "price":5000,
+    "inStock":23
+  },
+  {
+    "id":"6ebbc150-9b80-44b3-9dce-dd4770fc3333",
+    "name":"Mimmi - Pike Fishing robot",
+    "price":5000,
+    "inStock":23
   },
   {
     "id":"6ebbc150-9b80-44b3-9dce-dd4770fc2704",
@@ -84,12 +102,12 @@ const Products = () => {
     setProducts(products => [...products, product]);
   }
 
+  console.log("Number of products " + products.length);
+
   return (
-    <div className="App">
+    <div className="Products" >
       <ShoppingCart products={products}></ShoppingCart>
-      <div className="center">
         <ProductList products={jsonArrayProducts} onClick={callBack}></ProductList>
-      </div>
     </div>
   );
 }

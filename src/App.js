@@ -1,21 +1,30 @@
 import './App.css';
-import ShoppingCart from './ShoppingCart.js';
-import ProductList from './ProductList.js';
-import { useState, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import { Navigate } from "react-router-dom";
 
 const App = () => {
 
   //Products in the shopping cart.
-  //const [products, setProducts] = useState([]);
+  const [redirectProducts, setRedirectProducts] = useState(false);
+
+  const onRedirectBtnClick = () => {
+    setRedirectProducts(true);
+  }
+
+  if(redirectProducts) {
+    return (
+      <Navigate to="/products"></Navigate>
+    );
+  }
 
   return (
     <div className="App">
-      <h1>This is my application</h1>
-      <nav>
-        <Link to="/products">Products</Link>
-      </nav>
-      <Outlet/>
+      <div className="center">
+        <div className="App-home">
+          <h1>Welcome to the robot shop!</h1>
+          <button className="App-button" onClick={onRedirectBtnClick} >Browse robots</button>
+        </div>
+      </div>
     </div>
   );
 }
