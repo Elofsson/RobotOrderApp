@@ -1,12 +1,10 @@
-# Getting Started with Create React App
+### Build
+In order to build the application, open the project in the root directory and run 
+* npm install
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+Once installed, run 
+* npm start
+and the application should open on [http://localhost:3000]. 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -21,3 +19,5 @@ Here is a few of the things that i would like to improve / fix :).
 * Fix the structure of the CSS since the structure of it is a little bit messy.
 * Improve the form validation.
 * Fix the routing of views, since it can get messy after navigating for a while.
+* Add icons to textfields and some buttons.
+* Add a header / menu bar and a footer for most views.
